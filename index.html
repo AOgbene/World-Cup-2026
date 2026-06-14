@@ -478,6 +478,15 @@ function renderSetupTab(){
       <div class="score-rule"><span style="font-weight:600">Max possible (tournament winner)</span><span class="score-pts" style="color:#fff">24 pts</span></div>
     </div>
     <div class="scoring-key">
+      <h3>Prizes</h3>
+      <div class="score-rule"><span>🥇 First Place</span><span class="score-pts" style="color:#FFD700">€60</span></div>
+      <div class="score-rule"><span>🥈 Second Place</span><span class="score-pts" style="color:#AAAAAA">€20</span></div>
+      <div class="score-rule" style="flex-direction:column;align-items:flex-start;gap:4px;padding-top:10px">
+        <span style="font-weight:600;color:var(--white)">Tiebreaker</span>
+        <span style="font-size:12px;color:var(--grey-mid);line-height:1.5">In the event of a tie, the winner will be decided by the highest combined points total of each player's three lowest-ranked teams.</span>
+      </div>
+    </div>
+    <div class="scoring-key">
       <h3>Sweepstake Draw</h3>
       ${SWEEPSTAKE_GROUPS.map(g=>`
         <div class="score-rule" style="flex-direction:column;align-items:flex-start;gap:4px">
@@ -500,4 +509,4 @@ function showTab(name,el){
 renderAll();
 </script>
 </body>
-</html
+</html>

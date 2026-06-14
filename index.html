@@ -96,102 +96,114 @@
 <script>
 
 // ============================================================
-//  ✏️  RESULTS — UPDATE THIS SECTION EACH DAY
+//  ✏️  UPDATE THIS SECTION EACH DAY
 //
-//  To enter a result, find the fixture and change:
+//  1. Change TODAY to the current date (must match date format below)
+//  2. Add results for completed matches
+//  3. Add eliminated teams to ELIMINATED list
+//
+//  RESULTS: find the fixture and change:
 //    homeScore: null  →  homeScore: 2
 //    awayScore: null  →  awayScore: 1
-//
 //  For knockout matches that went to penalties, also set:
 //    penWinner: "Team Name"
 //
-//  Leave as null for matches not yet played.
+//  ELIMINATED: add country names exactly as spelled below,
+//  e.g. "Türkiye" not "Turkey", "Curaçao" not "Curacao"
 // ============================================================
 
+const TODAY = "Sun 14 Jun";
+
+const ELIMINATED = [
+  // Add eliminated teams here, e.g:
+  // "Haiti",
+  // "Scotland",
+];
+
 const RESULTS = {
-  // ── Thu 11 Jun ───────────────────────────────────────────
+  // ── Thu 12 Jun ───────────────────────────────────────────
   "Mexico vs South Africa":         { homeScore: 2, awayScore: 0 },
   "South Korea vs Czechia":         { homeScore: 2, awayScore: 1 },
-  // ── Fri 12 Jun ───────────────────────────────────────────
+  // ── Fri 13 Jun ───────────────────────────────────────────
   "Canada vs Bosnia & Herz.":       { homeScore: 1, awayScore: 1 },
   "USA vs Paraguay":                { homeScore: 4, awayScore: 1 },
-  // ── Sat 13 Jun ───────────────────────────────────────────
+  // ── Sat 14 Jun ───────────────────────────────────────────
   "Qatar vs Switzerland":           { homeScore: 1, awayScore: 1 },
   "Brazil vs Morocco":              { homeScore: 1, awayScore: 1 },
   "Haiti vs Scotland":              { homeScore: 0, awayScore: 1 },
   "Australia vs Türkiye":           { homeScore: 2, awayScore: 0 },
-  // ── Sun 14 Jun ───────────────────────────────────────────
+  // ── Sun 15 Jun ───────────────────────────────────────────
   "Germany vs Curaçao":             { homeScore: null, awayScore: null },
   "Netherlands vs Japan":           { homeScore: null, awayScore: null },
   "Ivory Coast vs Ecuador":         { homeScore: null, awayScore: null },
   "Sweden vs Tunisia":              { homeScore: null, awayScore: null },
-  // ── Mon 15 Jun ───────────────────────────────────────────
+  // ── Mon 16 Jun ───────────────────────────────────────────
   "Spain vs Cape Verde":            { homeScore: null, awayScore: null },
   "Belgium vs Egypt":               { homeScore: null, awayScore: null },
   "Saudi Arabia vs Uruguay":        { homeScore: null, awayScore: null },
   "Iran vs New Zealand":            { homeScore: null, awayScore: null },
-  // ── Tue 16 Jun ───────────────────────────────────────────
+  // ── Tue 17 Jun ───────────────────────────────────────────
   "France vs Senegal":              { homeScore: null, awayScore: null },
   "Iraq vs Norway":                 { homeScore: null, awayScore: null },
   "Argentina vs Algeria":           { homeScore: null, awayScore: null },
   "Austria vs Jordan":              { homeScore: null, awayScore: null },
-  // ── Wed 17 Jun ───────────────────────────────────────────
+  // ── Wed 18 Jun ───────────────────────────────────────────
   "Portugal vs DR Congo":           { homeScore: null, awayScore: null },
   "England vs Croatia":             { homeScore: null, awayScore: null },
   "Ghana vs Panama":                { homeScore: null, awayScore: null },
   "Uzbekistan vs Colombia":         { homeScore: null, awayScore: null },
-  // ── Thu 18 Jun ───────────────────────────────────────────
+  // ── Thu 19 Jun ───────────────────────────────────────────
   "Czechia vs South Africa":        { homeScore: null, awayScore: null },
   "Switzerland vs Bosnia & Herz.":  { homeScore: null, awayScore: null },
   "Canada vs Qatar":                { homeScore: null, awayScore: null },
   "Mexico vs South Korea":          { homeScore: null, awayScore: null },
-  // ── Fri 19 Jun ───────────────────────────────────────────
+  // ── Fri 20 Jun ───────────────────────────────────────────
   "Scotland vs Morocco":            { homeScore: null, awayScore: null },
   "USA vs Australia":               { homeScore: null, awayScore: null },
   "Brazil vs Haiti":                { homeScore: null, awayScore: null },
   "Türkiye vs Paraguay":            { homeScore: null, awayScore: null },
-  // ── Sat 20 Jun ───────────────────────────────────────────
+  // ── Sat 21 Jun ───────────────────────────────────────────
   "Netherlands vs Sweden":          { homeScore: null, awayScore: null },
   "Germany vs Ivory Coast":         { homeScore: null, awayScore: null },
   "Ecuador vs Curaçao":             { homeScore: null, awayScore: null },
   "Tunisia vs Japan":               { homeScore: null, awayScore: null },
-  // ── Sun 21 Jun ───────────────────────────────────────────
+  // ── Sun 22 Jun ───────────────────────────────────────────
   "Spain vs Saudi Arabia":          { homeScore: null, awayScore: null },
   "Belgium vs Iran":                { homeScore: null, awayScore: null },
   "Uruguay vs Cape Verde":          { homeScore: null, awayScore: null },
   "New Zealand vs Egypt":           { homeScore: null, awayScore: null },
-  // ── Mon 22 Jun ───────────────────────────────────────────
+  // ── Mon 23 Jun ───────────────────────────────────────────
   "Argentina vs Austria":           { homeScore: null, awayScore: null },
   "France vs Iraq":                 { homeScore: null, awayScore: null },
   "Norway vs Senegal":              { homeScore: null, awayScore: null },
   "Jordan vs Algeria":              { homeScore: null, awayScore: null },
-  // ── Tue 23 Jun ───────────────────────────────────────────
+  // ── Tue 24 Jun ───────────────────────────────────────────
   "Portugal vs Uzbekistan":         { homeScore: null, awayScore: null },
   "England vs Ghana":               { homeScore: null, awayScore: null },
   "Panama vs Croatia":              { homeScore: null, awayScore: null },
   "Colombia vs DR Congo":           { homeScore: null, awayScore: null },
-  // ── Wed 24 Jun ───────────────────────────────────────────
+  // ── Wed 25 Jun ───────────────────────────────────────────
   "Switzerland vs Canada":          { homeScore: null, awayScore: null },
   "Bosnia & Herz. vs Qatar":        { homeScore: null, awayScore: null },
   "Scotland vs Brazil":             { homeScore: null, awayScore: null },
   "Morocco vs Haiti":               { homeScore: null, awayScore: null },
   "Czechia vs Mexico":              { homeScore: null, awayScore: null },
   "South Africa vs South Korea":    { homeScore: null, awayScore: null },
-  // ── Thu 25 Jun ───────────────────────────────────────────
+  // ── Thu 26 Jun ───────────────────────────────────────────
   "Ecuador vs Germany":             { homeScore: null, awayScore: null },
   "Curaçao vs Ivory Coast":         { homeScore: null, awayScore: null },
   "Japan vs Sweden":                { homeScore: null, awayScore: null },
   "Tunisia vs Netherlands":         { homeScore: null, awayScore: null },
   "Türkiye vs USA":                 { homeScore: null, awayScore: null },
   "Paraguay vs Australia":          { homeScore: null, awayScore: null },
-  // ── Fri 26 Jun ───────────────────────────────────────────
+  // ── Fri 27 Jun ───────────────────────────────────────────
   "Norway vs France":               { homeScore: null, awayScore: null },
   "Senegal vs Iraq":                { homeScore: null, awayScore: null },
   "Cape Verde vs Saudi Arabia":     { homeScore: null, awayScore: null },
   "Uruguay vs Spain":               { homeScore: null, awayScore: null },
   "Egypt vs Iran":                  { homeScore: null, awayScore: null },
   "New Zealand vs Belgium":         { homeScore: null, awayScore: null },
-  // ── Sat 27 Jun ───────────────────────────────────────────
+  // ── Sat 28 Jun ───────────────────────────────────────────
   "Panama vs England":              { homeScore: null, awayScore: null },
   "Croatia vs Ghana":               { homeScore: null, awayScore: null },
   "Colombia vs Portugal":           { homeScore: null, awayScore: null },
@@ -394,9 +406,9 @@ function renderGroupsTab(){
         </div>
         <div><div class="group-total-pts">${total}</div><div class="group-total-label">total pts</div></div>
       </div>
-      ${g.teams.map(t=>{const tp=pts[g.letter].teams[t.n]||0;return`
-        <div class="team-row">
-          <div class="team-left"><div class="tier-dot ${TIER_DOT[t.tier]}"></div><span>${t.n}</span></div>
+      ${g.teams.map(t=>{const tp=pts[g.letter].teams[t.n]||0;const out=ELIMINATED.includes(t.n);return`
+        <div class="team-row" style="${out?'opacity:0.45':''}">
+          <div class="team-left"><div class="tier-dot ${TIER_DOT[t.tier]}"></div><span style="${out?'text-decoration:line-through;color:var(--grey-mid)':''}">${t.n}</span></div>
           <span class="team-pts-val ${tp===0?'zero':''}">${tp}</span>
         </div>`;}).join('')}
     </div>`;
@@ -412,9 +424,23 @@ function renderFixturesTab(){
   if(activeFilter==='group'){
     const byDate={};
     fixtures.forEach(f=>{(byDate[f.date]=byDate[f.date]||[]).push(f);});
-    body=Object.entries(byDate).map(([date,fs])=>`
-      <div class="date-header">${date}</div>
-      ${fs.map(fixtureCard).join('')}`).join('');
+    // Date order list to compare past/present/future
+    const dateOrder=Object.keys(byDate);
+    const todayIdx=dateOrder.indexOf(TODAY);
+    body=Object.entries(byDate).map(([date,fs],i)=>{
+      const allDone=fs.every(f=>f.homeScore!==null);
+      const isPast=allDone&&i<todayIdx;
+      const id='date_'+i;
+      if(isPast){
+        return`<details id="${id}">
+          <summary style="cursor:pointer;padding:10px 0;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:var(--grey-mid);border-bottom:1px solid var(--card-border);margin-bottom:8px;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+            <span>▶ ${date}</span><span style="font-size:11px;font-family:'Inter',sans-serif;font-weight:600">${fs.length} matches · all done</span>
+          </summary>
+          ${fs.map(fixtureCard).join('')}
+        </details>`;
+      }
+      return`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`;
+    }).join('');
   } else {
     const sf=knockoutFixtures.filter(f=>f.stage===activeFilter);
     body=`<div class="stage-section"><div class="stage-title">${labels[activeFilter]}</div>${sf.map(fixtureCard).join('')}</div>`;

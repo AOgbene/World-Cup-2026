@@ -100,7 +100,7 @@
 //  ✏️  UPDATE THIS SECTION EACH DAY
 // ============================================================
 
-const TODAY = "Sat 27 Jun";
+const TODAY = "Mon 29 Jun";
 
 const ELIMINATED = [
   "Czechia",
@@ -116,95 +116,96 @@ const ELIMINATED = [
   "Jordan",
   "Panama",
   "Scotland",
-  "Iran",  
   "South Korea",
-  "South Africa"
+  "Iran",
+  "Uzbekistan",
+  "South Africa",
 ];
 
 const RESULTS = {
-  // ── Thu 12 Jun ───────────────────────────────────────────
+  // ── Thu 11 Jun ───────────────────────────────────────────
   "Mexico vs South Africa":         { homeScore: 2, awayScore: 0 },
   "South Korea vs Czechia":         { homeScore: 2, awayScore: 1 },
-  // ── Fri 13 Jun ───────────────────────────────────────────
+  // ── Fri 12 Jun ───────────────────────────────────────────
   "Canada vs Bosnia & Herz.":       { homeScore: 1, awayScore: 1 },
   "USA vs Paraguay":                { homeScore: 4, awayScore: 1 },
-  // ── Sat 14 Jun ───────────────────────────────────────────
+  // ── Sat 13 Jun ───────────────────────────────────────────
   "Qatar vs Switzerland":           { homeScore: 1, awayScore: 1 },
   "Brazil vs Morocco":              { homeScore: 1, awayScore: 1 },
   "Haiti vs Scotland":              { homeScore: 0, awayScore: 1 },
   "Australia vs Türkiye":           { homeScore: 2, awayScore: 0 },
-  // ── Sun 15 Jun ───────────────────────────────────────────
+  // ── Sun 14 Jun ───────────────────────────────────────────
   "Germany vs Curaçao":             { homeScore: 7, awayScore: 1 },
   "Netherlands vs Japan":           { homeScore: 2, awayScore: 2 },
   "Ivory Coast vs Ecuador":         { homeScore: 1, awayScore: 0 },
   "Sweden vs Tunisia":              { homeScore: 5, awayScore: 1 },
-  // ── Mon 16 Jun ───────────────────────────────────────────
+  // ── Mon 15 Jun ───────────────────────────────────────────
   "Spain vs Cape Verde":            { homeScore: 0, awayScore: 0 },
   "Belgium vs Egypt":               { homeScore: 1, awayScore: 1 },
   "Saudi Arabia vs Uruguay":        { homeScore: 1, awayScore: 1 },
   "Iran vs New Zealand":            { homeScore: 2, awayScore: 2 },
-  // ── Tue 17 Jun ───────────────────────────────────────────
+  // ── Tue 16 Jun ───────────────────────────────────────────
   "France vs Senegal":              { homeScore: 3, awayScore: 1 },
   "Iraq vs Norway":                 { homeScore: 1, awayScore: 4 },
   "Argentina vs Algeria":           { homeScore: 3, awayScore: 0 },
   "Austria vs Jordan":              { homeScore: 3, awayScore: 1 },
-  // ── Wed 18 Jun ───────────────────────────────────────────
+  // ── Wed 17 Jun ───────────────────────────────────────────
   "Portugal vs DR Congo":           { homeScore: 1, awayScore: 1 },
   "England vs Croatia":             { homeScore: 4, awayScore: 2 },
   "Ghana vs Panama":                { homeScore: 1, awayScore: 0 },
   "Uzbekistan vs Colombia":         { homeScore: 1, awayScore: 3 },
-  // ── Thu 19 Jun ───────────────────────────────────────────
+  // ── Thu 18 Jun ───────────────────────────────────────────
   "Czechia vs South Africa":        { homeScore: 1, awayScore: 1 },
   "Switzerland vs Bosnia & Herz.":  { homeScore: 4, awayScore: 1 },
   "Canada vs Qatar":                { homeScore: 6, awayScore: 0 },
   "Mexico vs South Korea":          { homeScore: 1, awayScore: 0 },
-  // ── Fri 20 Jun ───────────────────────────────────────────
+  // ── Fri 19 Jun ───────────────────────────────────────────
   "Scotland vs Morocco":            { homeScore: 0, awayScore: 1 },
   "USA vs Australia":               { homeScore: 2, awayScore: 0 },
   "Brazil vs Haiti":                { homeScore: 3, awayScore: 0 },
   "Türkiye vs Paraguay":            { homeScore: 0, awayScore: 1 },
-  // ── Sat 21 Jun ───────────────────────────────────────────
+  // ── Sat 20 Jun ───────────────────────────────────────────
   "Netherlands vs Sweden":          { homeScore: 5, awayScore: 1 },
   "Germany vs Ivory Coast":         { homeScore: 2, awayScore: 1 },
   "Ecuador vs Curaçao":             { homeScore: 0, awayScore: 0 },
   "Tunisia vs Japan":               { homeScore: 0, awayScore: 4 },
-  // ── Sun 22 Jun ───────────────────────────────────────────
+  // ── Sun 21 Jun ───────────────────────────────────────────
   "Spain vs Saudi Arabia":          { homeScore: 4, awayScore: 0 },
   "Belgium vs Iran":                { homeScore: 0, awayScore: 0 },
   "Uruguay vs Cape Verde":          { homeScore: 2, awayScore: 2 },
   "New Zealand vs Egypt":           { homeScore: 1, awayScore: 3 },
-  // ── Mon 23 Jun ───────────────────────────────────────────
+  // ── Mon 22 Jun ───────────────────────────────────────────
   "Argentina vs Austria":           { homeScore: 2, awayScore: 0 },
   "France vs Iraq":                 { homeScore: 3, awayScore: 0 },
   "Norway vs Senegal":              { homeScore: 3, awayScore: 2 },
   "Jordan vs Algeria":              { homeScore: 1, awayScore: 2 },
-  // ── Tue 24 Jun ───────────────────────────────────────────
+  // ── Tue 23 Jun ───────────────────────────────────────────
   "Portugal vs Uzbekistan":         { homeScore: 5, awayScore: 0 },
   "England vs Ghana":               { homeScore: 0, awayScore: 0 },
   "Panama vs Croatia":              { homeScore: 0, awayScore: 1 },
   "Colombia vs DR Congo":           { homeScore: 1, awayScore: 0 },
-  // ── Wed 25 Jun ───────────────────────────────────────────
+  // ── Wed 24 Jun ───────────────────────────────────────────
   "Switzerland vs Canada":          { homeScore: 2, awayScore: 1 },
   "Bosnia & Herz. vs Qatar":        { homeScore: 3, awayScore: 1 },
   "Scotland vs Brazil":             { homeScore: 0, awayScore: 3 },
   "Morocco vs Haiti":               { homeScore: 4, awayScore: 2 },
   "Czechia vs Mexico":              { homeScore: 0, awayScore: 3 },
   "South Africa vs South Korea":    { homeScore: 1, awayScore: 0 },
-  // ── Thu 26 Jun ───────────────────────────────────────────
+  // ── Thu 25 Jun ───────────────────────────────────────────
   "Ecuador vs Germany":             { homeScore: 2, awayScore: 1 },
   "Curaçao vs Ivory Coast":         { homeScore: 0, awayScore: 2 },
   "Japan vs Sweden":                { homeScore: 1, awayScore: 1 },
   "Tunisia vs Netherlands":         { homeScore: 1, awayScore: 3 },
   "Türkiye vs USA":                 { homeScore: 3, awayScore: 2 },
   "Paraguay vs Australia":          { homeScore: 0, awayScore: 0 },
-  // ── Fri 27 Jun ───────────────────────────────────────────
+  // ── Fri 26 Jun ───────────────────────────────────────────
   "Norway vs France":               { homeScore: 1, awayScore: 4 },
   "Senegal vs Iraq":                { homeScore: 5, awayScore: 0 },
   "Cape Verde vs Saudi Arabia":     { homeScore: 0, awayScore: 0 },
   "Uruguay vs Spain":               { homeScore: 0, awayScore: 1 },
   "Egypt vs Iran":                  { homeScore: 1, awayScore: 1 },
   "New Zealand vs Belgium":         { homeScore: 1, awayScore: 5 },
-  // ── Sat 28 Jun ───────────────────────────────────────────
+  // ── Sat 27 Jun ───────────────────────────────────────────
   "Panama vs England":              { homeScore: 0, awayScore: 2 },
   "Croatia vs Ghana":               { homeScore: 2, awayScore: 1 },
   "Colombia vs Portugal":           { homeScore: 0, awayScore: 0 },
@@ -216,10 +217,14 @@ const RESULTS = {
 // ============================================================
 //  KNOCKOUT RESULTS — add when matches are played
 //  Format: { homeScore: X, awayScore: Y, penWinner: "Team" or null }
+//  Use the matchId from R32_FIXTURES or R16_FIXTURES below.
 // ============================================================
 const KNOCKOUT_RESULTS = {
-  // Round of 32 — fill in as matches are played
+  // ── Round of 32 ──────────────────────────────────────────
   "M73": { homeScore: 0, awayScore: 1, penWinner: null },
+
+  // ── Round of 16 ──────────────────────────────────────────
+  // "M101": { homeScore: 2, awayScore: 1, penWinner: null },
 };
 
 // ============================================================
@@ -262,142 +267,143 @@ const SWEEPSTAKE_GROUPS = [
 ];
 
 const GROUP_FIXTURES = [
-  { date:"Thu 11 Jun", wcGroup:"A", home:"Mexico",       away:"South Africa" },
-  { date:"Thu 11 Jun", wcGroup:"A", home:"South Korea",  away:"Czechia" },
-  { date:"Fri 12 Jun", wcGroup:"B", home:"Canada",       away:"Bosnia & Herz." },
-  { date:"Fri 12 Jun", wcGroup:"D", home:"USA",          away:"Paraguay" },
-  { date:"Sat 13 Jun", wcGroup:"B", home:"Qatar",        away:"Switzerland" },
-  { date:"Sat 13 Jun", wcGroup:"C", home:"Brazil",       away:"Morocco" },
-  { date:"Sat 13 Jun", wcGroup:"C", home:"Haiti",        away:"Scotland" },
-  { date:"Sat 13 Jun", wcGroup:"D", home:"Australia",    away:"Türkiye" },
-  { date:"Sun 14 Jun", wcGroup:"E", home:"Germany",      away:"Curaçao" },
-  { date:"Sun 14 Jun", wcGroup:"F", home:"Netherlands",  away:"Japan" },
-  { date:"Sun 14 Jun", wcGroup:"E", home:"Ivory Coast",  away:"Ecuador" },
-  { date:"Sun 14 Jun", wcGroup:"F", home:"Sweden",       away:"Tunisia" },
-  { date:"Mon 15 Jun", wcGroup:"H", home:"Spain",        away:"Cape Verde" },
-  { date:"Mon 15 Jun", wcGroup:"G", home:"Belgium",      away:"Egypt" },
-  { date:"Mon 15 Jun", wcGroup:"H", home:"Saudi Arabia", away:"Uruguay" },
-  { date:"Mon 15 Jun", wcGroup:"G", home:"Iran",         away:"New Zealand" },
-  { date:"Tue 16 Jun", wcGroup:"I", home:"France",       away:"Senegal" },
-  { date:"Tue 16 Jun", wcGroup:"I", home:"Iraq",         away:"Norway" },
-  { date:"Tue 16 Jun", wcGroup:"J", home:"Argentina",    away:"Algeria" },
-  { date:"Tue 16 Jun", wcGroup:"J", home:"Austria",      away:"Jordan" },
-  { date:"Wed 17 Jun", wcGroup:"K", home:"Portugal",     away:"DR Congo" },
-  { date:"Wed 17 Jun", wcGroup:"L", home:"England",      away:"Croatia" },
-  { date:"Wed 17 Jun", wcGroup:"L", home:"Ghana",        away:"Panama" },
-  { date:"Wed 17 Jun", wcGroup:"K", home:"Uzbekistan",   away:"Colombia" },
-  { date:"Thu 18 Jun", wcGroup:"A", home:"Czechia",      away:"South Africa" },
-  { date:"Thu 18 Jun", wcGroup:"B", home:"Switzerland",  away:"Bosnia & Herz." },
-  { date:"Thu 18 Jun", wcGroup:"B", home:"Canada",       away:"Qatar" },
-  { date:"Thu 18 Jun", wcGroup:"A", home:"Mexico",       away:"South Korea" },
-  { date:"Fri 19 Jun", wcGroup:"C", home:"Scotland",     away:"Morocco" },
-  { date:"Fri 19 Jun", wcGroup:"D", home:"USA",          away:"Australia" },
-  { date:"Fri 19 Jun", wcGroup:"C", home:"Brazil",       away:"Haiti" },
-  { date:"Fri 19 Jun", wcGroup:"D", home:"Türkiye",      away:"Paraguay" },
-  { date:"Sat 20 Jun", wcGroup:"F", home:"Netherlands",  away:"Sweden" },
-  { date:"Sat 20 Jun", wcGroup:"E", home:"Germany",      away:"Ivory Coast" },
-  { date:"Sat 20 Jun", wcGroup:"E", home:"Ecuador",      away:"Curaçao" },
-  { date:"Sat 20 Jun", wcGroup:"F", home:"Tunisia",      away:"Japan" },
-  { date:"Sun 21 Jun", wcGroup:"H", home:"Spain",        away:"Saudi Arabia" },
-  { date:"Sun 21 Jun", wcGroup:"G", home:"Belgium",      away:"Iran" },
-  { date:"Sun 21 Jun", wcGroup:"H", home:"Uruguay",      away:"Cape Verde" },
-  { date:"Sun 21 Jun", wcGroup:"G", home:"New Zealand",  away:"Egypt" },
-  { date:"Mon 22 Jun", wcGroup:"J", home:"Argentina",    away:"Austria" },
-  { date:"Mon 22 Jun", wcGroup:"I", home:"France",       away:"Iraq" },
-  { date:"Mon 22 Jun", wcGroup:"I", home:"Norway",       away:"Senegal" },
-  { date:"Mon 22 Jun", wcGroup:"J", home:"Jordan",       away:"Algeria" },
-  { date:"Tue 23 Jun", wcGroup:"K", home:"Portugal",     away:"Uzbekistan" },
-  { date:"Tue 23 Jun", wcGroup:"L", home:"England",      away:"Ghana" },
-  { date:"Tue 23 Jun", wcGroup:"L", home:"Panama",       away:"Croatia" },
-  { date:"Tue 23 Jun", wcGroup:"K", home:"Colombia",     away:"DR Congo" },
-  { date:"Wed 24 Jun", wcGroup:"B", home:"Switzerland",  away:"Canada" },
+  { date:"Thu 11 Jun", wcGroup:"A", home:"Mexico",         away:"South Africa" },
+  { date:"Thu 11 Jun", wcGroup:"A", home:"South Korea",    away:"Czechia" },
+  { date:"Fri 12 Jun", wcGroup:"B", home:"Canada",         away:"Bosnia & Herz." },
+  { date:"Fri 12 Jun", wcGroup:"D", home:"USA",            away:"Paraguay" },
+  { date:"Sat 13 Jun", wcGroup:"B", home:"Qatar",          away:"Switzerland" },
+  { date:"Sat 13 Jun", wcGroup:"C", home:"Brazil",         away:"Morocco" },
+  { date:"Sat 13 Jun", wcGroup:"C", home:"Haiti",          away:"Scotland" },
+  { date:"Sat 13 Jun", wcGroup:"D", home:"Australia",      away:"Türkiye" },
+  { date:"Sun 14 Jun", wcGroup:"E", home:"Germany",        away:"Curaçao" },
+  { date:"Sun 14 Jun", wcGroup:"F", home:"Netherlands",    away:"Japan" },
+  { date:"Sun 14 Jun", wcGroup:"E", home:"Ivory Coast",    away:"Ecuador" },
+  { date:"Sun 14 Jun", wcGroup:"F", home:"Sweden",         away:"Tunisia" },
+  { date:"Mon 15 Jun", wcGroup:"H", home:"Spain",          away:"Cape Verde" },
+  { date:"Mon 15 Jun", wcGroup:"G", home:"Belgium",        away:"Egypt" },
+  { date:"Mon 15 Jun", wcGroup:"H", home:"Saudi Arabia",   away:"Uruguay" },
+  { date:"Mon 15 Jun", wcGroup:"G", home:"Iran",           away:"New Zealand" },
+  { date:"Tue 16 Jun", wcGroup:"I", home:"France",         away:"Senegal" },
+  { date:"Tue 16 Jun", wcGroup:"I", home:"Iraq",           away:"Norway" },
+  { date:"Tue 16 Jun", wcGroup:"J", home:"Argentina",      away:"Algeria" },
+  { date:"Tue 16 Jun", wcGroup:"J", home:"Austria",        away:"Jordan" },
+  { date:"Wed 17 Jun", wcGroup:"K", home:"Portugal",       away:"DR Congo" },
+  { date:"Wed 17 Jun", wcGroup:"L", home:"England",        away:"Croatia" },
+  { date:"Wed 17 Jun", wcGroup:"L", home:"Ghana",          away:"Panama" },
+  { date:"Wed 17 Jun", wcGroup:"K", home:"Uzbekistan",     away:"Colombia" },
+  { date:"Thu 18 Jun", wcGroup:"A", home:"Czechia",        away:"South Africa" },
+  { date:"Thu 18 Jun", wcGroup:"B", home:"Switzerland",    away:"Bosnia & Herz." },
+  { date:"Thu 18 Jun", wcGroup:"B", home:"Canada",         away:"Qatar" },
+  { date:"Thu 18 Jun", wcGroup:"A", home:"Mexico",         away:"South Korea" },
+  { date:"Fri 19 Jun", wcGroup:"C", home:"Scotland",       away:"Morocco" },
+  { date:"Fri 19 Jun", wcGroup:"D", home:"USA",            away:"Australia" },
+  { date:"Fri 19 Jun", wcGroup:"C", home:"Brazil",         away:"Haiti" },
+  { date:"Fri 19 Jun", wcGroup:"D", home:"Türkiye",        away:"Paraguay" },
+  { date:"Sat 20 Jun", wcGroup:"F", home:"Netherlands",    away:"Sweden" },
+  { date:"Sat 20 Jun", wcGroup:"E", home:"Germany",        away:"Ivory Coast" },
+  { date:"Sat 20 Jun", wcGroup:"E", home:"Ecuador",        away:"Curaçao" },
+  { date:"Sat 20 Jun", wcGroup:"F", home:"Tunisia",        away:"Japan" },
+  { date:"Sun 21 Jun", wcGroup:"H", home:"Spain",          away:"Saudi Arabia" },
+  { date:"Sun 21 Jun", wcGroup:"G", home:"Belgium",        away:"Iran" },
+  { date:"Sun 21 Jun", wcGroup:"H", home:"Uruguay",        away:"Cape Verde" },
+  { date:"Sun 21 Jun", wcGroup:"G", home:"New Zealand",    away:"Egypt" },
+  { date:"Mon 22 Jun", wcGroup:"J", home:"Argentina",      away:"Austria" },
+  { date:"Mon 22 Jun", wcGroup:"I", home:"France",         away:"Iraq" },
+  { date:"Mon 22 Jun", wcGroup:"I", home:"Norway",         away:"Senegal" },
+  { date:"Mon 22 Jun", wcGroup:"J", home:"Jordan",         away:"Algeria" },
+  { date:"Tue 23 Jun", wcGroup:"K", home:"Portugal",       away:"Uzbekistan" },
+  { date:"Tue 23 Jun", wcGroup:"L", home:"England",        away:"Ghana" },
+  { date:"Tue 23 Jun", wcGroup:"L", home:"Panama",         away:"Croatia" },
+  { date:"Tue 23 Jun", wcGroup:"K", home:"Colombia",       away:"DR Congo" },
+  { date:"Wed 24 Jun", wcGroup:"B", home:"Switzerland",    away:"Canada" },
   { date:"Wed 24 Jun", wcGroup:"B", home:"Bosnia & Herz.", away:"Qatar" },
-  { date:"Wed 24 Jun", wcGroup:"C", home:"Scotland",     away:"Brazil" },
-  { date:"Wed 24 Jun", wcGroup:"C", home:"Morocco",      away:"Haiti" },
-  { date:"Wed 24 Jun", wcGroup:"A", home:"Czechia",      away:"Mexico" },
-  { date:"Wed 24 Jun", wcGroup:"A", home:"South Africa", away:"South Korea" },
-  { date:"Thu 25 Jun", wcGroup:"E", home:"Ecuador",      away:"Germany" },
-  { date:"Thu 25 Jun", wcGroup:"E", home:"Curaçao",      away:"Ivory Coast" },
-  { date:"Thu 25 Jun", wcGroup:"F", home:"Japan",        away:"Sweden" },
-  { date:"Thu 25 Jun", wcGroup:"F", home:"Tunisia",      away:"Netherlands" },
-  { date:"Thu 25 Jun", wcGroup:"D", home:"Türkiye",      away:"USA" },
-  { date:"Thu 25 Jun", wcGroup:"D", home:"Paraguay",     away:"Australia" },
-  { date:"Fri 26 Jun", wcGroup:"I", home:"Norway",       away:"France" },
-  { date:"Fri 26 Jun", wcGroup:"I", home:"Senegal",      away:"Iraq" },
-  { date:"Fri 26 Jun", wcGroup:"H", home:"Cape Verde",   away:"Saudi Arabia" },
-  { date:"Fri 26 Jun", wcGroup:"H", home:"Uruguay",      away:"Spain" },
-  { date:"Fri 26 Jun", wcGroup:"G", home:"Egypt",        away:"Iran" },
-  { date:"Fri 26 Jun", wcGroup:"G", home:"New Zealand",  away:"Belgium" },
-  { date:"Sat 27 Jun", wcGroup:"L", home:"Panama",       away:"England" },
-  { date:"Sat 27 Jun", wcGroup:"L", home:"Croatia",      away:"Ghana" },
-  { date:"Sat 27 Jun", wcGroup:"K", home:"Colombia",     away:"Portugal" },
-  { date:"Sat 27 Jun", wcGroup:"K", home:"DR Congo",     away:"Uzbekistan" },
-  { date:"Sat 27 Jun", wcGroup:"J", home:"Algeria",      away:"Austria" },
-  { date:"Sat 27 Jun", wcGroup:"J", home:"Jordan",       away:"Argentina" },
+  { date:"Wed 24 Jun", wcGroup:"C", home:"Scotland",       away:"Brazil" },
+  { date:"Wed 24 Jun", wcGroup:"C", home:"Morocco",        away:"Haiti" },
+  { date:"Wed 24 Jun", wcGroup:"A", home:"Czechia",        away:"Mexico" },
+  { date:"Wed 24 Jun", wcGroup:"A", home:"South Africa",   away:"South Korea" },
+  { date:"Thu 25 Jun", wcGroup:"E", home:"Ecuador",        away:"Germany" },
+  { date:"Thu 25 Jun", wcGroup:"E", home:"Curaçao",        away:"Ivory Coast" },
+  { date:"Thu 25 Jun", wcGroup:"F", home:"Japan",          away:"Sweden" },
+  { date:"Thu 25 Jun", wcGroup:"F", home:"Tunisia",        away:"Netherlands" },
+  { date:"Thu 25 Jun", wcGroup:"D", home:"Türkiye",        away:"USA" },
+  { date:"Thu 25 Jun", wcGroup:"D", home:"Paraguay",       away:"Australia" },
+  { date:"Fri 26 Jun", wcGroup:"I", home:"Norway",         away:"France" },
+  { date:"Fri 26 Jun", wcGroup:"I", home:"Senegal",        away:"Iraq" },
+  { date:"Fri 26 Jun", wcGroup:"H", home:"Cape Verde",     away:"Saudi Arabia" },
+  { date:"Fri 26 Jun", wcGroup:"H", home:"Uruguay",        away:"Spain" },
+  { date:"Fri 26 Jun", wcGroup:"G", home:"Egypt",          away:"Iran" },
+  { date:"Fri 26 Jun", wcGroup:"G", home:"New Zealand",    away:"Belgium" },
+  { date:"Sat 27 Jun", wcGroup:"L", home:"Panama",         away:"England" },
+  { date:"Sat 27 Jun", wcGroup:"L", home:"Croatia",        away:"Ghana" },
+  { date:"Sat 27 Jun", wcGroup:"K", home:"Colombia",       away:"Portugal" },
+  { date:"Sat 27 Jun", wcGroup:"K", home:"DR Congo",       away:"Uzbekistan" },
+  { date:"Sat 27 Jun", wcGroup:"J", home:"Algeria",        away:"Austria" },
+  { date:"Sat 27 Jun", wcGroup:"J", home:"Jordan",         away:"Argentina" },
 ];
 
 // ============================================================
 //  ROUND OF 32 FIXTURES
-//  Teams will be confirmed after group stage ends (27 Jun).
-//  homeDesc / awayDesc are shown until real teams are set.
-//  Update home/away with actual team names once known, and
-//  add scores to KNOCKOUT_RESULTS above using the matchId key.
+//  Update home/away with actual team names once confirmed.
+//  Add scores to KNOCKOUT_RESULTS above using the matchId.
 // ============================================================
 const R32_FIXTURES = [
-  // ── Sun 28 Jun ─────────────────────────────────────────────────────
   { matchId:"M73", date:"Sun 28 Jun", label:"Round of 32", venue:"Los Angeles",
-    homeDesc:"South Africa", awayDesc:"Canada",
     home:"South Africa", away:"Canada" },
-  // ── Mon 29 Jun ─────────────────────────────────────────────────────
   { matchId:"M76", date:"Mon 29 Jun", label:"Round of 32", venue:"Houston",
-    homeDesc:"Brazil", awayDesc:"Japan",
     home:"Brazil", away:"Japan" },
   { matchId:"M74", date:"Mon 29 Jun", label:"Round of 32", venue:"Boston",
-    homeDesc:"Germany", awayDesc:"Paraguay",
     home:"Germany", away:"Paraguay" },
   { matchId:"M75", date:"Mon 29 Jun", label:"Round of 32", venue:"Monterrey",
-    homeDesc:"Netherlands", awayDesc:"Morocco",
     home:"Netherlands", away:"Morocco" },
-  // ── Tue 30 Jun ─────────────────────────────────────────────────────
   { matchId:"M78", date:"Tue 30 Jun", label:"Round of 32", venue:"Dallas",
-    homeDesc:"Ivory Coast", awayDesc:"Norway",
     home:"Ivory Coast", away:"Norway" },
   { matchId:"M77", date:"Tue 30 Jun", label:"Round of 32", venue:"New Jersey",
-    homeDesc:"France", awayDesc:"Sweden",
     home:"France", away:"Sweden" },
   { matchId:"M79", date:"Tue 30 Jun", label:"Round of 32", venue:"Mexico City",
-    homeDesc:"Mexico", awayDesc:"Ecuador",
     home:"Mexico", away:"Ecuador" },
-  // ── Wed 1 Jul ──────────────────────────────────────────────────────
   { matchId:"M80", date:"Wed 1 Jul", label:"Round of 32", venue:"Atlanta",
-    homeDesc:"England", awayDesc:"DR Congo",
     home:"England", away:"DR Congo" },
   { matchId:"M82", date:"Wed 1 Jul", label:"Round of 32", venue:"Seattle",
-    homeDesc:"Belgium", awayDesc:"Senegal",
     home:"Belgium", away:"Senegal" },
-    { matchId:"M81", date:"Wed 1 Jul", label:"Round of 32", venue:"San Francisco",
-    homeDesc:"USA (1st/2nd Grp D)", awayDesc:"Bosnia & Herz.",
+  { matchId:"M81", date:"Wed 1 Jul", label:"Round of 32", venue:"San Francisco",
     home:"USA", away:"Bosnia & Herz." },
-  // ── Thu 2 Jul ──────────────────────────────────────────────────────
   { matchId:"M83", date:"Thu 2 Jul", label:"Round of 32", venue:"Los Angeles",
-    homeDesc:"Spain", awayDesc:"Austria",
     home:"Spain", away:"Austria" },
   { matchId:"M87", date:"Thu 2 Jul", label:"Round of 32", venue:"Toronto",
-    homeDesc:"Portugal", awayDesc:"Croatia",
     home:"Portugal", away:"Croatia" },
   { matchId:"M84", date:"Thu 2 Jul", label:"Round of 32", venue:"Vancouver",
-    homeDesc:"Switzerland", awayDesc:"Algeria",
     home:"Switzerland", away:"Algeria" },
-  // ── Fri 3 Jul ──────────────────────────────────────────────────────
   { matchId:"M86", date:"Fri 3 Jul", label:"Round of 32", venue:"Dallas",
-    homeDesc:"Australia", awayDesc:"Egypt",
     home:"Australia", away:"Egypt" },
   { matchId:"M85", date:"Fri 3 Jul", label:"Round of 32", venue:"Miami",
-    homeDesc:"Argentina", awayDesc:"Cape Verde",
     home:"Argentina", away:"Cape Verde" },
   { matchId:"M88", date:"Fri 3 Jul", label:"Round of 32", venue:"Kansas City",
-    homeDesc:"Colombia", awayDesc:"Ghana",
     home:"Colombia", away:"Ghana" },
+];
+
+// ============================================================
+//  ROUND OF 16 FIXTURES
+//  Update home/away with actual team names as R32 concludes.
+//  Add scores to KNOCKOUT_RESULTS above using the matchId.
+//  matchIds M101-M108 are used for R16.
+// ============================================================
+const R16_FIXTURES = [
+   { matchId:"M89", date:"Sat 4 Jul", label:"Round of 16", venue:"Philadelphia",
+    home:null, away:null, homeDesc:"Winner M74", awayDesc:"Winner M77" },
+  { matchId:"M90", date:"Sat 4 Jul", label:"Round of 16", venue:"Houston",
+    home:"Canada", away:null, homeDesc:"Canada", awayDesc:"Winner M75" },
+  { matchId:"M91", date:"Sun 5 Jul", label:"Round of 16", venue:"New York New Jersey",
+    home:null, away:null, homeDesc:"Winner M76", awayDesc:"Winner M78" },
+  { matchId:"M92", date:"Sun 5 Jul", label:"Round of 16", venue:"Mexico City",
+    home:null, away:null, homeDesc:"Winner M79", awayDesc:"Winner M80" },
+  { matchId:"M93", date:"Mon 6 Jul", label:"Round of 16", venue:"Dallas",
+    home:null, away:null, homeDesc:"Winner M83", awayDesc:"Winner M84" },
+  { matchId:"M94", date:"Mon 6 Jul", label:"Round of 16", venue:"Seattle",
+    home:null, away:null, homeDesc:"Winner M81", awayDesc:"Winner M82" },
+  { matchId:"M95", date:"Tue 7 Jul", label:"Round of 16", venue:"Atlanta",
+    home:null, away:null, homeDesc:"Winner M86", awayDesc:"Winner M88" },
+  { matchId:"M96", date:"Tue 7 Jul", label:"Round of 16", venue:"Vancouver",
+    home:null, away:null, homeDesc:"Winner M85", awayDesc:"Winner M87" },
 ];
 
 function getSWGroup(name){
@@ -412,7 +418,6 @@ function calcPoints(){
     g.teams.forEach(t=>pts[g.letter].teams[t.n]=0);
   });
 
-  // Group stage fixtures
   GROUP_FIXTURES.forEach(f=>{
     const key=`${f.home} vs ${f.away}`;
     const r=RESULTS[key];
@@ -427,8 +432,7 @@ function calcPoints(){
     }
   });
 
-  // Knockout fixtures (R32 onward)
-  R32_FIXTURES.forEach(f=>{
+  [...R32_FIXTURES, ...R16_FIXTURES].forEach(f=>{
     const r=KNOCKOUT_RESULTS[f.matchId];
     if(!r||r.homeScore===null||!f.home||!f.away)return;
     const hs=Number(r.homeScore), as=Number(r.awayScore);
@@ -493,12 +497,10 @@ function renderFixturesTab(){
       const fx={...f, stage:'group', homeScore:r?r.homeScore:null, awayScore:r?r.awayScore:null, penWinner:null};
       (byDate[f.date]=byDate[f.date]||[]).push(fx);
     });
-    const dateOrder=Object.keys(byDate);
-    // Parse "Mon 22 Jun" style dates for comparison
     const monthMap={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
-    function parseDate(d){ const p=d.split(' '); return new Date(2026,monthMap[p[2]],parseInt(p[1])); }
+    function parseDate(d){const p=d.split(' ');return new Date(2026,monthMap[p[2]],parseInt(p[1]));}
     const todayDate=parseDate(TODAY);
-    body=Object.entries(byDate).map(([date,fs],i)=>{
+    body=Object.entries(byDate).map(([date,fs])=>{
       const allDone=fs.every(f=>f.homeScore!==null);
       const isPast=allDone&&parseDate(date)<todayDate;
       if(isPast){
@@ -513,52 +515,51 @@ function renderFixturesTab(){
     }).join('');
 
   } else if(activeFilter==='r32'){
-    // Group R32 fixtures by date
     const byDate={};
     R32_FIXTURES.forEach(f=>{
       const r=KNOCKOUT_RESULTS[f.matchId];
       const fx={...f, stage:'r32', homeScore:r?r.homeScore:null, awayScore:r?r.awayScore:null, penWinner:r?r.penWinner:null};
       (byDate[f.date]=byDate[f.date]||[]).push(fx);
     });
-    body=Object.entries(byDate).map(([date,fs])=>{
-      return`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`;
-    }).join('');
+    body=Object.entries(byDate).map(([date,fs])=>`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`).join('');
+
+  } else if(activeFilter==='r16'){
+    const byDate={};
+    R16_FIXTURES.forEach(f=>{
+      const r=KNOCKOUT_RESULTS[f.matchId];
+      const fx={...f, stage:'r16', homeScore:r?r.homeScore:null, awayScore:r?r.awayScore:null, penWinner:r?r.penWinner:null};
+      (byDate[f.date]=byDate[f.date]||[]).push(fx);
+    });
+    body=Object.entries(byDate).map(([date,fs])=>`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`).join('');
 
   } else {
-    body=`<div class="stage-section"><div class="stage-title">${labels[activeFilter]}</div><div class="fixture-card" style="text-align:center;color:var(--grey-mid);padding:24px;">Teams confirmed after Round of 32</div></div>`;
+    body=`<div class="stage-section"><div class="stage-title">${labels[activeFilter]}</div><div class="fixture-card" style="text-align:center;color:var(--grey-mid);padding:24px;">Teams confirmed as tournament progresses</div></div>`;
   }
 
   document.getElementById('tab-fixtures').innerHTML=filterHtml+body;
 }
 
 function fixtureCard(f){
-  const r=f.stage==='r32' ? (KNOCKOUT_RESULTS[f.matchId]||null) : null;
-  const homeScore = f.homeScore !== undefined ? f.homeScore : (r ? r.homeScore : null);
-  const awayScore = f.awayScore !== undefined ? f.awayScore : (r ? r.awayScore : null);
-  const penWinner = f.penWinner || (r ? r.penWinner : null);
-
-  // Display names — use real team if set, otherwise the descriptor
-  const homeName = f.home || (f.homeDesc || 'TBC');
-  const awayName = f.away || (f.awayDesc || 'TBC');
-  const homeIsReal = !!f.home;
-  const awayIsReal = !!f.away;
-
-  const hg = f.home ? getSWGroup(f.home) : null;
-  const ag = f.away ? getSWGroup(f.away) : null;
-  const hg_data = hg ? SWEEPSTAKE_GROUPS.find(g=>g.letter===hg) : null;
-  const ag_data = ag ? SWEEPSTAKE_GROUPS.find(g=>g.letter===ag) : null;
-
-  const scoreHtml = homeScore!==null && homeScore!==undefined
-    ? `<div class="fixture-score">${homeScore}–${awayScore}</div>`
-    : `<div class="fixture-score pending">vs</div>`;
-
-  const hBadge = hg_data ? `<span class="sw-badge ${GC[hg]}">Grp ${hg} · ${hg_data.player}</span>` : '<span></span>';
-  const aBadge = ag_data ? `<span class="sw-badge ${GC[ag]}">Grp ${ag} · ${ag_data.player}</span>` : '<span></span>';
-  const pens = penWinner ? `<div class="fixture-pens">${penWinner} won on pens</div>` : '';
-
-  const metaLeft = f.venue ? `${f.label||'R32'} · ${f.venue}` : (f.wcGroup ? `WC Group ${f.wcGroup}` : (f.label||'Knockout'));
-  const statusBadge = (homeScore!==null && homeScore!==undefined) ? '<span style="color:#4CAF50">✓ Done</span>' : (f.matchId ? `<span style="color:var(--grey-mid);font-size:10px">${f.matchId}</span>` : '');
-
+  const r=KNOCKOUT_RESULTS[f.matchId]||null;
+  const homeScore=f.homeScore!==undefined?f.homeScore:(r?r.homeScore:null);
+  const awayScore=f.awayScore!==undefined?f.awayScore:(r?r.awayScore:null);
+  const penWinner=f.penWinner||(r?r.penWinner:null);
+  const homeName=f.home||(f.homeDesc||'TBC');
+  const awayName=f.away||(f.awayDesc||'TBC');
+  const homeIsReal=!!f.home;
+  const awayIsReal=!!f.away;
+  const hg=f.home?getSWGroup(f.home):null;
+  const ag=f.away?getSWGroup(f.away):null;
+  const hg_data=hg?SWEEPSTAKE_GROUPS.find(g=>g.letter===hg):null;
+  const ag_data=ag?SWEEPSTAKE_GROUPS.find(g=>g.letter===ag):null;
+  const scoreHtml=homeScore!==null&&homeScore!==undefined
+    ?`<div class="fixture-score">${homeScore}–${awayScore}</div>`
+    :`<div class="fixture-score pending">vs</div>`;
+  const hBadge=hg_data?`<span class="sw-badge ${GC[hg]}">Grp ${hg} · ${hg_data.player}</span>`:'<span></span>';
+  const aBadge=ag_data?`<span class="sw-badge ${GC[ag]}">Grp ${ag} · ${ag_data.player}</span>`:'<span></span>';
+  const pens=penWinner?`<div class="fixture-pens">${penWinner} won on pens</div>`:'';
+  const metaLeft=f.venue&&f.venue!=='TBC'?`${f.label||'KO'} · ${f.venue}`:(f.wcGroup?`WC Group ${f.wcGroup}`:(f.label||'Knockout'));
+  const statusBadge=(homeScore!==null&&homeScore!==undefined)?'<span style="color:#4CAF50">✓ Done</span>':(f.matchId?`<span style="color:var(--grey-mid);font-size:10px">${f.matchId}</span>`:'');
   return`<div class="fixture-card">
     <div class="fixture-meta"><span>${metaLeft}</span>${statusBadge}</div>
     <div class="fixture-teams">

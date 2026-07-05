@@ -136,7 +136,7 @@ const ELIMINATED = [
   "Ghana",
   "Cape Verde",
   "Canada",
-  "Paraguay", 
+  "Paraguay",
 ];
 
 const RESULTS = {
@@ -234,7 +234,7 @@ const RESULTS = {
 // ============================================================
 //  KNOCKOUT RESULTS — add when matches are played
 //  Format: { homeScore: X, awayScore: Y, penWinner: "Team" or null }
-//  Use the matchId from R32_FIXTURES or R16_FIXTURES below.
+//  Use the matchId from the fixture arrays below.
 // ============================================================
 const KNOCKOUT_RESULTS = {
   // ── Round of 32 ──────────────────────────────────────────
@@ -251,15 +251,26 @@ const KNOCKOUT_RESULTS = {
   "M83": { homeScore: 3, awayScore: 0, penWinner: null },
   "M87": { homeScore: 2, awayScore: 1, penWinner: null },
   "M84": { homeScore: 2, awayScore: 0, penWinner: null },
-  "M86": { homeScore: 1, awayScore: 1, penWinner: "Egypt"},
+  "M86": { homeScore: 1, awayScore: 1, penWinner: "Egypt" },
   "M85": { homeScore: 3, awayScore: 2, penWinner: null },
   "M88": { homeScore: 1, awayScore: 0, penWinner: null },
-
   // ── Round of 16 ──────────────────────────────────────────
-  "M90": { homeScore: 0, awayScore: 2, penWinner: null },
   "M89": { homeScore: 0, awayScore: 1, penWinner: null },
+  "M90": { homeScore: 0, awayScore: 2, penWinner: null },
+  // ── Quarter-Finals ────────────────────────────────────────
+  // "M97":  { homeScore: null, awayScore: null, penWinner: null },
+  // "M98":  { homeScore: null, awayScore: null, penWinner: null },
+  // "M99":  { homeScore: null, awayScore: null, penWinner: null },
+  // "M100": { homeScore: null, awayScore: null, penWinner: null },
+  // ── Semi-Finals ───────────────────────────────────────────
+  // "M101": { homeScore: null, awayScore: null, penWinner: null },
+  // "M102": { homeScore: null, awayScore: null, penWinner: null },
+  // ── Third Place ───────────────────────────────────────────
+  // "M103": { homeScore: null, awayScore: null, penWinner: null },
+  // ── Final ─────────────────────────────────────────────────
+  // "M104": { homeScore: null, awayScore: null, penWinner: null },
 };
-  
+
 // ============================================================
 //  END OF RESULTS SECTION
 // ============================================================
@@ -376,8 +387,6 @@ const GROUP_FIXTURES = [
 
 // ============================================================
 //  ROUND OF 32 FIXTURES
-//  Update home/away with actual team names once confirmed.
-//  Add scores to KNOCKOUT_RESULTS above using the matchId.
 // ============================================================
 const R32_FIXTURES = [
   { matchId:"M73", date:"Sun 28 Jun", label:"Round of 32", venue:"Los Angeles",
@@ -416,12 +425,9 @@ const R32_FIXTURES = [
 
 // ============================================================
 //  ROUND OF 16 FIXTURES
-//  Update home/away with actual team names as R32 concludes.
-//  Add scores to KNOCKOUT_RESULTS above using the matchId.
-//  matchIds M101-M108 are used for R16.
 // ============================================================
 const R16_FIXTURES = [
-   { matchId:"M89", date:"Sat 4 Jul", label:"Round of 16", venue:"Philadelphia",
+  { matchId:"M89", date:"Sat 4 Jul", label:"Round of 16", venue:"Philadelphia",
     home:"Paraguay", away:"France", homeDesc:"Paraguay", awayDesc:"France" },
   { matchId:"M90", date:"Sat 4 Jul", label:"Round of 16", venue:"Houston",
     home:"Canada", away:"Morocco", homeDesc:"Canada", awayDesc:"Morocco" },
@@ -441,8 +447,6 @@ const R16_FIXTURES = [
 
 // ============================================================
 //  QUARTER-FINAL FIXTURES
-//  Update home/away with actual team names as R16 concludes.
-//  Add scores to KNOCKOUT_RESULTS above using the matchId.
 // ============================================================
 const QF_FIXTURES = [
   { matchId:"M97", date:"Thu 9 Jul", label:"Quarter-Final", venue:"Boston",
@@ -453,7 +457,37 @@ const QF_FIXTURES = [
     home:null, away:null, homeDesc:"Winner M91", awayDesc:"Winner M92" },
   { matchId:"M100", date:"Sat 11 Jul", label:"Quarter-Final", venue:"Kansas City",
     home:null, away:null, homeDesc:"Winner M95", awayDesc:"Winner M96" },
-  ];
+];
+
+// ============================================================
+//  SEMI-FINAL FIXTURES
+//  M101: Winner M97 vs Winner M98 — Tue 14 Jul — Dallas
+//  M102: Winner M99 vs Winner M100 — Wed 15 Jul — Atlanta
+// ============================================================
+const SF_FIXTURES = [
+  { matchId:"M101", date:"Tue 14 Jul", label:"Semi-Final", venue:"Dallas",
+    home:null, away:null, homeDesc:"Winner M97", awayDesc:"Winner M98" },
+  { matchId:"M102", date:"Wed 15 Jul", label:"Semi-Final", venue:"Atlanta",
+    home:null, away:null, homeDesc:"Winner M99", awayDesc:"Winner M100" },
+];
+
+// ============================================================
+//  THIRD PLACE PLAYOFF
+//  M103: Runner-up M101 vs Runner-up M102 — Sat 18 Jul — Miami
+// ============================================================
+const TP_FIXTURES = [
+  { matchId:"M103", date:"Sat 18 Jul", label:"Third Place", venue:"Miami",
+    home:null, away:null, homeDesc:"Runner-up M101", awayDesc:"Runner-up M102" },
+];
+
+// ============================================================
+//  FINAL
+//  M104: Winner M101 vs Winner M102 — Sun 19 Jul — New York New Jersey
+// ============================================================
+const FINAL_FIXTURES = [
+  { matchId:"M104", date:"Sun 19 Jul", label:"Final", venue:"New York New Jersey",
+    home:null, away:null, homeDesc:"Winner M101", awayDesc:"Winner M102" },
+];
 
 function getSWGroup(name){
   if(!name) return null;
@@ -481,7 +515,7 @@ function calcPoints(){
     }
   });
 
-  [...R32_FIXTURES, ...R16_FIXTURES, ...QF_FIXTURES].forEach(f=>{
+  [...R32_FIXTURES,...R16_FIXTURES,...QF_FIXTURES,...SF_FIXTURES,...TP_FIXTURES,...FINAL_FIXTURES].forEach(f=>{
     const r=KNOCKOUT_RESULTS[f.matchId];
     if(!r||r.homeScore===null||!f.home||!f.away)return;
     const hs=Number(r.homeScore), as=Number(r.awayScore);
@@ -567,7 +601,7 @@ function renderFixturesTab(){
     const byDate={};
     R32_FIXTURES.forEach(f=>{
       const r=KNOCKOUT_RESULTS[f.matchId];
-      const fx={...f, stage:'r32', homeScore:r?r.homeScore:null, awayScore:r?r.awayScore:null, penWinner:r?r.penWinner:null};
+      const fx={...f,stage:'r32',homeScore:r?r.homeScore:null,awayScore:r?r.awayScore:null,penWinner:r?r.penWinner:null};
       (byDate[f.date]=byDate[f.date]||[]).push(fx);
     });
     body=Object.entries(byDate).map(([date,fs])=>`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`).join('');
@@ -576,19 +610,38 @@ function renderFixturesTab(){
     const byDate={};
     R16_FIXTURES.forEach(f=>{
       const r=KNOCKOUT_RESULTS[f.matchId];
-      const fx={...f, stage:'r16', homeScore:r?r.homeScore:null, awayScore:r?r.awayScore:null, penWinner:r?r.penWinner:null};
+      const fx={...f,stage:'r16',homeScore:r?r.homeScore:null,awayScore:r?r.awayScore:null,penWinner:r?r.penWinner:null};
       (byDate[f.date]=byDate[f.date]||[]).push(fx);
     });
     body=Object.entries(byDate).map(([date,fs])=>`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`).join('');
 
- } else if(activeFilter==='qf'){
+  } else if(activeFilter==='qf'){
     const byDate={};
     QF_FIXTURES.forEach(f=>{
       const r=KNOCKOUT_RESULTS[f.matchId];
-      const fx={...f, stage:'qf', homeScore:r?r.homeScore:null, awayScore:r?r.awayScore:null, penWinner:r?r.penWinner:null};
+      const fx={...f,stage:'qf',homeScore:r?r.homeScore:null,awayScore:r?r.awayScore:null,penWinner:r?r.penWinner:null};
       (byDate[f.date]=byDate[f.date]||[]).push(fx);
     });
-body=Object.entries(byDate).map(([date,fs])=>`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`).join('');
+    body=Object.entries(byDate).map(([date,fs])=>`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`).join('');
+
+  } else if(activeFilter==='sf'){
+    const byDate={};
+    // Include third place playoff under semi-finals tab
+    [...SF_FIXTURES,...TP_FIXTURES].forEach(f=>{
+      const r=KNOCKOUT_RESULTS[f.matchId];
+      const fx={...f,stage:'sf',homeScore:r?r.homeScore:null,awayScore:r?r.awayScore:null,penWinner:r?r.penWinner:null};
+      (byDate[f.date]=byDate[f.date]||[]).push(fx);
+    });
+    body=Object.entries(byDate).map(([date,fs])=>`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`).join('');
+
+  } else if(activeFilter==='final'){
+    const byDate={};
+    FINAL_FIXTURES.forEach(f=>{
+      const r=KNOCKOUT_RESULTS[f.matchId];
+      const fx={...f,stage:'final',homeScore:r?r.homeScore:null,awayScore:r?r.awayScore:null,penWinner:r?r.penWinner:null};
+      (byDate[f.date]=byDate[f.date]||[]).push(fx);
+    });
+    body=Object.entries(byDate).map(([date,fs])=>`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`).join('');
 
   } else {
     body=`<div class="stage-section"><div class="stage-title">${labels[activeFilter]}</div><div class="fixture-card" style="text-align:center;color:var(--grey-mid);padding:24px;">Teams confirmed as tournament progresses</div></div>`;

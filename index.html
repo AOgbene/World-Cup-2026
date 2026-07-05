@@ -439,6 +439,22 @@ const R16_FIXTURES = [
     home:"Switzerland", away:"Colombia", homeDesc:"Switzerland", awayDesc:"Colombia" },
 ];
 
+// ============================================================
+//  QUARTER-FINAL FIXTURES
+//  Update home/away with actual team names as R16 concludes.
+//  Add scores to KNOCKOUT_RESULTS above using the matchId.
+// ============================================================
+const QF_FIXTURES = [
+  { matchId:"M97", date:"Thu 9 Jul", label:"Quarter-Final", venue:"Boston",
+    home:"France", away:"Morocco", homeDesc:"France", awayDesc:"Morocco" },
+  { matchId:"M98", date:"Fri 10 Jul", label:"Quarter-Final", venue:"Los Angeles",
+    home:null, away:null, homeDesc:"Winner M93", awayDesc:"Winner M94" },
+  { matchId:"M99", date:"Sat 11 Jul", label:"Quarter-Final", venue:"Miami",
+    home:null, away:null, homeDesc:"Winner M91", awayDesc:"Winner M92" },
+  { matchId:"M100", date:"Sat 11 Jul", label:"Quarter-Final", venue:"Kansas City",
+    home:null, away:null, homeDesc:"Winner M95", awayDesc:"Winner M96" },
+  ];
+
 function getSWGroup(name){
   if(!name) return null;
   return SWEEPSTAKE_GROUPS.find(g => g.teams.find(t => t.n === name))?.letter || null;
@@ -465,7 +481,7 @@ function calcPoints(){
     }
   });
 
-  [...R32_FIXTURES, ...R16_FIXTURES].forEach(f=>{
+  [...R32_FIXTURES, ...R16_FIXTURES, ...QF_FIXTURES].forEach(f=>{
     const r=KNOCKOUT_RESULTS[f.matchId];
     if(!r||r.homeScore===null||!f.home||!f.away)return;
     const hs=Number(r.homeScore), as=Number(r.awayScore);
@@ -564,6 +580,15 @@ function renderFixturesTab(){
       (byDate[f.date]=byDate[f.date]||[]).push(fx);
     });
     body=Object.entries(byDate).map(([date,fs])=>`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`).join('');
+
+ } else if(activeFilter==='qf'){
+    const byDate={};
+    QF_FIXTURES.forEach(f=>{
+      const r=KNOCKOUT_RESULTS[f.matchId];
+      const fx={...f, stage:'qf', homeScore:r?r.homeScore:null, awayScore:r?r.awayScore:null, penWinner:r?r.penWinner:null};
+      (byDate[f.date]=byDate[f.date]||[]).push(fx);
+    });
+body=Object.entries(byDate).map(([date,fs])=>`<div class="date-header">${date}</div>${fs.map(fixtureCard).join('')}`).join('');
 
   } else {
     body=`<div class="stage-section"><div class="stage-title">${labels[activeFilter]}</div><div class="fixture-card" style="text-align:center;color:var(--grey-mid);padding:24px;">Teams confirmed as tournament progresses</div></div>`;

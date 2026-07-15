@@ -148,6 +148,7 @@ const ELIMINATED = [
   "Norway",
   "Switzerland",
   "France",
+  "England",
 ];
 
 const RESULTS = {
@@ -281,7 +282,7 @@ const KNOCKOUT_RESULTS = {
   "M100": { homeScore: 3, awayScore: 1, penWinner: null },
   // ── Semi-Finals ───────────────────────────────────────────
   "M101": { homeScore: 0, awayScore: 2, penWinner: null },
-  // "M102": { homeScore: null, awayScore: null, penWinner: null },
+  "M102": { homeScore: 1, awayScore: 2, penWinner: null },
   // ── Third Place ───────────────────────────────────────────
   // "M103": { homeScore: null, awayScore: null, penWinner: null },
   // ── Final ─────────────────────────────────────────────────
@@ -494,7 +495,7 @@ const SF_FIXTURES = [
 // ============================================================
 const TP_FIXTURES = [
   { matchId:"M103", date:"Sat 18 Jul", label:"Third Place", venue:"Miami",
-    home:"France", away:null, homeDesc:"France", awayDesc:"Runner-up M102" },
+    home:"France", away:"England", homeDesc:"France", awayDesc:"England" },
 ];
 
 // ============================================================
@@ -503,7 +504,7 @@ const TP_FIXTURES = [
 // ============================================================
 const FINAL_FIXTURES = [
   { matchId:"M104", date:"Sun 19 Jul", label:"Final", venue:"New York New Jersey",
-    home:"Spain", away:null, homeDesc:"Spain", awayDesc:"Winner M102" },
+    home:"Spain", away:"Argentina", homeDesc:"Spain", awayDesc:"Argentina" },
 ];
 
 function getSWGroup(name){
